@@ -2,3 +2,29 @@ Thu 11 May 2023 06:49:12 PM UTC:
  tests:  0|4
 total_score: 0/70
 de392c7
+Thu 11 May 2023 06:50:12 PM UTC: 
+ heap.c | 68 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++------
+ 1 file changed, 62 insertions(+), 6 deletions(-)
+In file included from test.c:4:
+heap.c: In function ‘createHeap’:
+heap.c:88:3: error: conversion to non-scalar type requested
+   88 |   Heap arreglo = (Heap)malloc(sizeof(Heap));
+      |   ^~~~
+heap.c:90:10: error: invalid type argument of ‘->’ (have ‘Heap’ {aka ‘struct Heap’})
+   90 |   arreglo->heapArray = (heapElem*)malloc(3 * sizeof(heapElem));
+      |          ^~
+heap.c:91:10: error: invalid type argument of ‘->’ (have ‘Heap’ {aka ‘struct Heap’})
+   91 |   arreglo->size = 0;
+      |          ^~
+heap.c:92:10: error: invalid type argument of ‘->’ (have ‘Heap’ {aka ‘struct Heap’})
+   92 |   arreglo->capac = 3;
+      |          ^~
+heap.c:93:10: error: incompatible types when returning type ‘Heap’ {aka ‘struct Heap’} but ‘Heap *’ {aka ‘struct Heap *’} was expected
+   93 |   return arreglo;
+      |          ^~~~~~~
+heap.c:94:1: error: control reaches end of non-void function [-Werror=return-type]
+   94 | }
+      | ^
+cc1: all warnings being treated as errors
+Compilation failed
+84f59c1
